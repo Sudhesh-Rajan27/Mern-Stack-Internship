@@ -1,0 +1,745 @@
+<html>
+<body>
+<script>
+function distributeLemons(lemons) {
+    const requiredLemonsPerGod = 7;
+    let shortage = 0;
+
+
+  if (lemons <= requiredLemonsPerGod) {
+        console.log(`God1: ${lemons} offered`); // Use backticks for template literals
+        console.log(`God2: need ${requiredLemonsPerGod}`);
+        console.log(`God3: need ${requiredLemonsPerGod}`);
+        shortage = (requiredLemonsPerGod * 3) - lemons;
+        console.log(`Shortage: ${shortage}`);
+    }
+   
+    else if (lemons % requiredLemonsPerGod === 0) {
+        let godCount = lemons / requiredLemonsPerGod;
+        for (let i = 1; i <= godCount; i++) {
+            console.log(`God${i}: 7 offered`);
+        }
+        console.log('Sufficient');
+    }
+    else if (lemons < requiredLemonsPerGod * 3) {
+        let godCount = Math.floor(lemons / requiredLemonsPerGod);
+        for (let i = 1; i <= godCount; i++) {
+            console.log(`God${i}: 7 offered`);
+        }
+        let remainingLemons = lemons % requiredLemonsPerGod;
+        console.log(`God${godCount + 1}: Having ${remainingLemons} need ${requiredLemonsPerGod - remainingLemons}`);
+        shortage = requiredLemonsPerGod - remainingLemons;
+        console.log(`Shortage: ${shortage}`);
+    }
+    else {
+        let godCount = Math.floor(lemons / requiredLemonsPerGod);
+        for (let i = 1; i <= godCount; i++) {
+            console.log(`God${i}: 7 offered`);
+        }
+        console.log('Sufficient');
+    }
+}
+
+console.log("Case 1:");
+distributeLemons(7);
+
+console.log("\nCase 2:");
+distributeLemons(21);
+
+console.log("\nCase 3:");
+distributeLemons(15);
+
+console.log("\nCase 4:");
+distributeLemons(67);
+
+</script>
+<h1>Aiml rocks</h1>
+</body>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````calculate and display how many candies 
+<html>
+<body>
+<script>
+function calculateCandies(totalCandies) {
+    // Sam gives half to Angel
+    let angelCandies = totalCandies / 2;
+    let samCandies = totalCandies / 2;
+
+    // Angel gives back half of her portion to Sam
+    let givenBackToSam = angelCandies / 2;
+    angelCandies -= givenBackToSam;
+    samCandies += givenBackToSam;
+
+    // Display results
+    console.log(`Sam has ${samCandies} candies.`);
+    console.log(`Angel has ${angelCandies} candies.`);
+}
+
+// Example with 16 candies
+calculateCandies(16);
+</script>
+<h1>Sam and Angel's Candies</h1>
+</body>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function calc(c){
+    
+    return "Sam: "+((c/2)+(c/4))+" Angel: "+(c/4)
+}
+console.log(calc(75))
+</script>
+<body>
+    
+</body>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+Arrow function :
+
+it is efficiency and interms of space and increase the readeability ,we can create function without name and it is called as arrow function 
+const howareyou=()=>{
+return 100;
+};
+document.get.elementById("response").innerHtml=howareyou();<html>
+<body>
+<h1 id="response"></h1>
+<h1 id="res"></h1>
+</body>
+<script>
+const howareyou=()=>{
+return 100;
+};
+var add=(a,b)=>{
+return a+b;};
+document.getElementById("response").innerHTML=howareyou();
+document.getElementById("res").inner=add(10,84);
+</script>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````design a simple calculator +-*/% individual arrow function for this same 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator with Arrow Functions and Switch</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <h2>Result: <span id="result"></span></h2>
+
+  <script>
+  
+    const add = (a, b) => a + b;
+    const subtract = (a, b) => a - b;
+    const multiply = (a, b) => a * b;
+    const divide = (a, b) => (b !== 0 ? a / b : "Cannot divide by zero");
+    const modulus = (a, b) => a % b;
+
+  
+    const num1 = parseFloat(prompt("Enter the first number:"));
+    const num2 = parseFloat(prompt("Enter the second number:"));
+    const operator = prompt("Enter an operator (+, -, *, /, %):");
+
+    let result;
+
+    
+    switch (operator) {
+      case "+":
+        result = add(num1, num2);
+        break;
+      case "-":
+        result = subtract(num1, num2);
+        break;
+      case "*":
+        result = multiply(num1, num2);
+        break;
+      case "/":
+        result = divide(num1, num2);
+	result=result.toFixed(2);
+        break;
+      case "%":
+        result = modulus(num1, num2);
+        break;
+      default:
+        result = "Invalid operator";
+    }
+
+    document.getElementById("result").innerHTML = result;
+  </script>
+</body>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+create An array by taking array size and array elements from the user extract all the perfect numbers and even prime numbers
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array</title>
+</head>
+<body>
+  <h1>Array</h1>
+  <h1 id="res"></h1>
+  <script>
+    const num = parseInt(prompt("Enter the array size:"), 10);
+    if (isNaN(num) || num <= 0) {
+        document.getElementById("res").innerText = "Please enter a valid array size.";
+    } else {
+        document.getElementById("res").innerText = "Enter the Array elements:";
+        const arr = [];
+        for (let i = 0; i < num; i++) {
+            const number = parseInt(prompt(`Enter element ${i + 1}:`), 10);
+            if (!Number.isInteger(number)) {
+                alert("Please provide a valid integer.");
+                i--; 
+                continue;
+            }
+            if (isperfectnumber(number)) {
+                arr.push(number);
+            }
+        }
+        alert("Perfect numbers in the array: " + arr);
+    }
+
+    function isperfectnumber(n) {
+        if (n < 0) { return false; }
+        let sum = 0;
+        for (let i = 1; i < n; i++) {
+            if (n % i === 0) {
+                sum += i;
+            }
+        }
+        return sum === n;
+    }
+  </script>
+</body>
+</html>
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+JS Promise
+
+<html>
+<script>
+if(booking)
+resolve()
+else
+project
+
+
+write a promise of andra bp 
+3.function
+1 person dist a-1 5000
+2 person dist b-2 2000
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promise.all Example</title>
+</head>
+<body>
+  <script>
+    let reachA = new Promise((resolve, reject) => {
+      let reached = true;
+      if (reached) {
+        setTimeout(resolve, 1000, "A reached");
+      } else {
+        reject("A not reached");
+      }
+    });
+
+    let reachB = new Promise((resolve, reject) => {
+      let reached = true;
+      if (reached) {
+        setTimeout(resolve, 1000, "B reached");
+      } else {
+        reject("B not reached");
+      }
+    });
+
+    let reachC = new Promise((resolve, reject) => {
+      let reached = true;
+      if (reached) {
+        setTimeout(resolve, 1000, "C reached");
+      } else {
+        reject("C not reached");
+      }
+    });
+
+    Promise.any([reachA, reachB, reachC])
+      .then((messages) => console.log(messages)) // Logs: ["A reached", "B reached", "C reached"]
+      .catch((error) => console.log(error)); // Catches any rejection
+  </script>
+</body>
+</html>
+
+when there is more than one promise inorder to review them we can use promise inbuilt method according to the requirement 
+
+methods:
+
+1.promise.all
+->once it see the promise false it will stop
+2.promise.any
+->gives the sortest time promise provided status should be true
+3.promise.allsettled
+->all the state is true
+->will display 1 amoung this three states 
+1.fullfulled
+2.rejected
+3.pending 
+
+4.promise.race
+
+closure 1:
+
+<html>
+<body>
+<script>
+function one(){
+var x=100;
+function two(){
+console.log(x);
+}
+two();
+}
+one();
+
+</script>
+</body>
+</html>
+closure 2:
+
+<html>
+<body>
+<script>
+function one(){
+var x=100;
+function two(){
+console.log(x);
+}
+return two;
+}
+var res=one();
+res()
+</script>
+</body>
+</html>
+html websites:
+youtube and wikipedia
+
+React:
+
+library or framework of javascript 
+netflix and amazon
+
+C:\Users\DELL\OneDrive\Desktop\react
+
+process:
+	create new folder name as react 
+	node -v
+	npm -v
+	npx create-react-app app_name
+	npm start
+	open ur app port no 3000
+make it work:
+1.open react folder 
+	u will have app folder got created
+2.open demo in vs code
+3.install npm i web-vitals
+
+react follow VDOM
+ulike html one's DOM get created changes are manipulation what we do get's completed and only that part will be rerender where as html everytime we make change entire DOM will be rerender 
+
+In web application created by react js each and every thing is called as components
+types of component
+1.functional component
+2.class component	
+
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+Props and Stats:
+
+every component will have props and stats.
+
+1.Props
+It won't change .Ex :name ,Tata 's Bislery
+
+2.stats
+It changes are we can change it ,ex:Water level
+	->initial stats
+		Full
+	->updted stats
+		hALF
+	->Current state
+		Empty
+
+Flipkart website:
+
+Component:
+
+1.Home page
+2.Grocerry
+3.Mobiles
+4.Fashion
+Mobiles
+Component 
+mobiles
+props name ,version ,price.
+state discount,stock available. 
+
+home .js,about.js,about.js
+
+All it industry using class component recently state concept was not available with functional components ,hooks is used implement state in function 
+types of hoohs
+useState 
+useEffect 
+useRef
+useContact 
+useReduce
+
+best example for use useState:Counter clock
+Stating initial State as Zero ,
+we can implemented reserted using new State hook,
+
+dell 
+7708326466
+
+
+
+````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````Upon the condition are action we apply in are functional coponents monitoring the impact are side effects of can be done using usefiy hook 
+
+
+
+folder reactfull
+->App 
+->
+5 components
+
+c1,c2....c5
+sometimes direct
+Note: WHenever we are using something inside curly brace it can be either js object or react component.
+
+only way to achieve it props using hirarchy this is not efficient make it efficient we have exclusive hook 
+called 
+App 
+container 
+user
+users 
+
+Useeffect:
+
+After an functional component
+```````````````````````````````````````````````````````````````````````````````````
+Usereducer :
+same as usestate to manage or upgrade states that is data that is values ofcomponents.
+difference is if u hv more states or complex things uuse usereducer
+
+takes two arguments:
+first is resucerfunction which says what u want to do (like increment or decrement ),
+second is initial value of state
+* usereducer return array with two values like usestate first is that initial count and second is dispatch function 
+we call them as state and dispatch
+step 1:
+create increment decrement program using usestate
+
+state will hold initial value and updated ones u call
+step 2:
+place usestate with usereducer
+
+import { useReducer, useEffect } from "react";
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+export function Clock() {
+  const initialState = { count: 0 }; 
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    document.title = `Value ${state.count}`; 
+    const resElement = document.getElementById("res");
+    if (resElement) {
+      resElement.textContent = `Value ${state.count}`; 
+    }
+  }, [state.count]);
+  return (
+    <div>
+      <h1>Count: {state.count}</h1>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <h1 id="res"></h1>
+    </div>
+  );
+}
+-----------------------------------------------------------------------------------------------
+Redux:
+Instalation
+npm i @reduxjs/toolkit react-redux
+
+install router
+npm i react-router-dom
+
+Architecture:
+
+router
+routes
+route
+path
+route
+routes
+router
+
+react-redux->it is a package to connect react and redux
+@reduxjs/toolkit is a react library 
+
+exaple :
+
+home,user, about,contact 
+
+-----------------------------------------
+create two folder under src 1.app for store and 2.slices for slices
+store -will have states
+slices will have 2 things actions and reducer 
+so every state will have actions and reducer 
+
+step 2: inside slices folder create a file called userslice.js
+
+userslice.js
+
+import {createSlice}from '@reduxjs/toolkit';
+const initialstate={
+users:[],
+};
+const userSlice =createSlice({
+	name:'users',
+	initialState,
+reducers:{
+addUser:(state,action)=>{
+	state.users=[...state.users,actions.payload];
+},
+},
+].
+
+add many reducer 
+--------------------------------------------------------------------------------
+create store.js file inside app folder 
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from '../slices/userslice';
+
+const store=configureStore({
+	reducer:{
+	userinfo:userReducer,
+},
+});
+
+userinfo is the key for reducers and usereducer is the name we
+
+
+user.js
+
+state is reduce 
+
+
+
+Json it is no SQL Inorder to process the json file or 
+json file look like js object 
+js != Json
+
+JSON->java script object notation
+compass helps to fetch data from mongo db server
+means compass helps u to reach mongo db ..like its client
+
+
+MONGOSHse 
+the mpngosh shell gives you an interactive environment where you can runqueries ,manage database,and perform admin
+
+DATA MODELING :
+
+Nothing but fix structure of ur data planing the structure
+
+ex:
+name
+id
+password
+
+Schema:
+actual blue print or structure of ur data like
+
+
+
+Use database_name
+db.collection_name.insertOne({})
+
+
+create a db name computers
+collection laptops
+field name ,model,color,Status,Price,Object :vendor field: vname,venderprice
+change it status to 
+
+
+db.products.find({$and:[{price:{$gt:8000}},{brand:"Apple}]})
+
+db.products.find({$or:[{price:{$lt:10000}},{brand:"Apple}]})
+
+all document in the customer collection where the hobbi
+
+
+db.companies.aggregate([$lookup:{from:"Employee",localField:"_id",foreignField:"company_id",as:"Employees"}])
+
+
+create a database called bank 
+create two collection
+customer -> name ,address,phone object, 
+personal
+collection
+customer 
+Account
+
+db.customerAccount.insertMany([
+  {
+    _id: 1,
+    accountNo: 1001,
+    branch: "Tirunelveli",
+    bankname: "State Bank of India",
+    ifsc: "SBI001",
+    balance: 15000.50,
+    accountType: "savings",
+    od: "no"
+  },
+  {
+    _id: 2,
+    accountNo: 1002,
+    branch: "Chennai",
+    bankname: "Indian Bank",
+    ifsc: "IND001",
+    balance: 25000.75,
+    accountType: "current",
+    od: "yes"
+  },
+  {
+    _id: 3,
+    accountNo: 1003,
+    branch: "Madurai",
+    bankname: "Axis Bank",
+    ifsc: "AXIS001",
+    balance: 32000.00,
+    accountType: "savings",
+    od: "no"
+  },
+  {
+    _id: 4,
+    accountNo: 1004,
+    branch: "Coimbatore",
+    bankname: "HDFC Bank",
+    ifsc: "HDFC001",
+    balance: 45000.25,
+    accountType: "current",
+    od: "yes"
+  },
+  {
+    _id: 5,
+    accountNo: 1005,
+    branch: "Trichy",
+    bankname: "ICICI Bank",
+    ifsc: "ICICI001",
+    balance: 50000.00,
+    accountType: "savings",
+    od: "no"
+  }
+]);
+
+
+node is a backend code for js we can use express js for middlwe ware 
+
+nodejs it is popular js library or runtime environment it allows to run java script in service side 
+
+note:
+1.Maintain Split terminal in vs code (2) in order to use client and server 
+2.Run Command- 
+Always Start the server first node server.js
+3.Command to start the client npm start
+
+we can delete pakage .json  to fet it back cpmmand npm init -y
+
+const express=require('express');
+// const an instance of an Express Application 
+// used for PerformanceResourceTiming,middleware management and many reasons
+// to keep routing clean
+const app=express();
+// Define the port number the server will listen 
+const port=3001;
+// Define a route for the Http Get trequest to the root URL ('/')
+// req represents the request object ,and res represents response object 
+app.get('/',(req,res)=>{
+    res.send("Hi xfnjxfnbkvjksdbv jdgnjkdn n njkbsdnl jdfnjkbd jkdfgbdfv dfgnfdjnb jndfzgjnfdjnbj fjnfadjknvjfd ; rghreih gh ruhds jfdng  fdgidshd   dfhsughdf jgjerj ")
+    res.send('Hello Node.js!');
+});
+// start the server and make it listen on the specified port
+// The callBack Function runs that the server is running and provided the url to access it 
+app.listen(port,()=>{
+    // log a msg indicating that the server is running and provide the url to access it 
+    console.log(`Server is Running at http://localhost:${port}`);
+});
+
+Axios :
+
+It is a popular js library use to make http request from browser or client to server
+
+Axios is known for Easy and Clean Syntax also Flexiblity expesisasly worsks well with 
+
+When we write an API for Exclusive purpose it is called as Restfull API
+
+Cors:
+
+full form(cross Origin Resorce Sharing)
+
+When webpage request information from resorce (From any other Sides) Whether to accept the request to process it or not will be defined in a rulebook for this purpose we use Cors.
+
+npm i axios 
+npm i cors
+
+npm i -g nodemon
+
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';//make sure axios is installed
+
+const DataComponent=()=>{
+    const[data,setData]=useState('');
+    useEffect(()=>{
+        axios.get('http://localhost:3000/api/data').then(response=>
+            setData(response.data.message))
+            .catch(error=>console.error('Error fetching data:',error));
+    },[]);
+    return(
+        <div>
+            <h1>data from server</h1>
+            <p>{data}</p>
+        </div>
+    );
+};
+export default DataComponent;|
+in a given eg we requeston serve from Cloun
+this is data via API from data 
+
+server res[onse json 
+from the json i wanr to filter so,we ara using car component 
+
+
+`````````````````````````````````````````````````````````````````src/Users.js
+src/Createuser.js
+src/Updateuser.js
+
+model->name,age ,email
+npm init
+index.js which is inside server folder write backend code ,
+
+g3by`7jb43dcqS
