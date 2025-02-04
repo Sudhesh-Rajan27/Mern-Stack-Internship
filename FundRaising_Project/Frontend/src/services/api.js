@@ -113,5 +113,13 @@ export const updateCampaignAmount = async (campaignId, amount, transactionId) =>
     throw error;
   }
 };
+const API_BASE_URL = "https://training-w4q4.onrender.com";  // Replace with your Render backend URL
+
+export const fetchData = async () => {
+  const response = await fetch(`${API_BASE_URL}/api/some-endpoint`);
+  return response.json();
+};
+
+
 
 export default api;
